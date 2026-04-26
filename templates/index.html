@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text to PDF Converter | ToolsFlash</title>
-    
+
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -35,7 +38,7 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         body {
             background-color: #0a0a0a;
@@ -65,7 +68,8 @@
             transition: all 0.3s ease;
         }
 
-        .input-area:hover, .input-area:focus-within {
+        .input-area:hover,
+        .input-area:focus-within {
             border-color: rgba(0, 242, 254, 0.3);
             background: rgba(0, 0, 0, 0.4);
         }
@@ -84,47 +88,37 @@
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
+
 <body class="text-gray-100 antialiased selection:bg-purple-500/30">
 
     <!-- Unified ToolsFlash Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5 backdrop-blur-xl">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg toolsflash-gradient flex items-center justify-center shadow-lg shadow-brand-cyan/20">
-                    <i data-lucide="zap" class="w-4 h-4 text-white"></i>
-                </div>
-                <span class="text-lg font-bold tracking-tight text-white">Tools<span class="toolsflash-gradient-text">Flash</span></span>
-            </div>
-            
-            <div class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
-                <a href="https://toolsflash.org" class="hover:text-brand-cyan transition-colors">Home</a>
-                <a href="https://image.toolsflash.org" class="hover:text-brand-cyan transition-colors">Image OCR</a>
-                <a href="https://pdf.toolsflash.org" class="text-white border-b-2 border-brand-cyan pb-1">PDF Converter</a>
-                <a href="#" class="hover:text-brand-cyan transition-colors">Video Downloader</a>
-            </div>
 
-            <button class="md:hidden p-2 hover:bg-white/5 rounded-lg">
-                <i data-lucide="menu" class="w-5 h-5"></i>
-            </button>
-        </div>
-    </nav>
 
-    <div class="w-full max-w-6xl mx-auto pt-32 pb-12 px-6 space-y-12">
-        
+    <div class="w-full max-w-6xl mx-auto pt-16 pb-12 px-6 space-y-12">
+
         <!-- Hero Section -->
         <header class="text-center space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-[10px] font-bold uppercase tracking-widest text-brand-cyan">
-                <span class="w-1 h-1 bg-brand-cyan rounded-full"></span>
-                Instant Document Engine
-            </div>
+
             <h1 class="text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight">
-                Premium Text-to-PDF <br> 
+                Text-to-PDF <br>
                 <span class="toolsflash-gradient-text italic font-bold">Conversion</span>
             </h1>
             <p class="text-gray-500 text-sm max-w-lg mx-auto font-medium">
@@ -134,7 +128,7 @@
 
         <!-- Main Workspace -->
         <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
-            
+
             <!-- Input Panel -->
             <div class="lg:w-1/2 p-6 md:p-10 space-y-6">
                 <div class="flex items-center gap-3 mb-2">
@@ -147,10 +141,14 @@
                 <div class="space-y-5">
                     <!-- Filename -->
                     <div class="space-y-2">
-                        <label for="filename_input" class="text-xs font-bold text-slate-400 uppercase tracking-wider">Save As</label>
+                        <label for="filename_input"
+                            class="text-xs font-bold text-slate-400 uppercase tracking-wider">Save As</label>
                         <div class="input-area rounded-2xl flex items-center group transition-all">
-                            <i data-lucide="file" class="w-4 h-4 ml-4 text-slate-500 group-focus-within:text-brand-cyan"></i>
-                            <input type="text" id="filename_input" class="w-full bg-transparent px-3 py-4 text-sm text-white focus:outline-none placeholder-slate-600" placeholder="document" value="document">
+                            <i data-lucide="file"
+                                class="w-4 h-4 ml-4 text-slate-500 group-focus-within:text-brand-cyan"></i>
+                            <input type="text" id="filename_input"
+                                class="w-full bg-transparent px-3 py-4 text-sm text-white focus:outline-none placeholder-slate-600"
+                                placeholder="document" value="document">
                             <span class="pr-4 text-xs font-bold text-slate-600">.PDF</span>
                         </div>
                     </div>
@@ -158,16 +156,21 @@
                     <!-- Content -->
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
-                            <label for="text_input" class="text-xs font-bold text-slate-400 uppercase tracking-wider">Text Content</label>
-                            <span class="stat-tag px-2 py-0.5 rounded-md text-[10px] font-mono"><span id="word-count">0</span> WORDS</span>
+                            <label for="text_input"
+                                class="text-xs font-bold text-slate-400 uppercase tracking-wider">Text Content</label>
+                            <span class="stat-tag px-2 py-0.5 rounded-md text-[10px] font-mono"><span
+                                    id="word-count">0</span> WORDS</span>
                         </div>
                         <div class="input-area rounded-2xl overflow-hidden h-[300px] flex flex-col">
-                            <textarea id="text_input" class="w-full h-full bg-transparent p-5 text-sm text-slate-300 leading-relaxed resize-none focus:outline-none placeholder-slate-700" placeholder="Start typing here..."></textarea>
+                            <textarea id="text_input"
+                                class="w-full h-full bg-transparent p-5 text-sm text-slate-300 leading-relaxed resize-none focus:outline-none placeholder-slate-700"
+                                placeholder="Start typing here..."></textarea>
                         </div>
                     </div>
                 </div>
 
-                <button id="generateBtn" class="w-full h-14 btn-primary text-white font-bold rounded-xl flex items-center justify-center gap-3 active:scale-[0.98]">
+                <button id="generateBtn"
+                    class="w-full h-14 btn-primary text-white font-bold rounded-xl flex items-center justify-center gap-3 active:scale-[0.98]">
                     <span id="btn-text">Generate Preview</span>
                     <i id="btn-icon" data-lucide="play" class="w-4 h-4 fill-current"></i>
                     <i id="btn-loader" data-lucide="loader-2" class="w-5 h-5 animate-spin hidden"></i>
@@ -175,7 +178,8 @@
             </div>
 
             <!-- Preview Panel -->
-            <div class="lg:w-1/2 bg-slate-900/40 p-6 md:p-10 flex flex-col border-t lg:border-t-0 lg:border-l border-white/5">
+            <div
+                class="lg:w-1/2 bg-slate-900/40 p-6 md:p-10 flex flex-col border-t lg:border-t-0 lg:border-l border-white/5">
                 <div class="flex items-center justify-between mb-8">
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-8 rounded-lg bg-brand-cyan/20 flex items-center justify-center">
@@ -190,27 +194,35 @@
                     </div>
                 </div>
 
-                <div class="relative bg-slate-950 rounded-2xl border border-white/5 flex-grow overflow-hidden shadow-inner flex flex-col min-h-[400px]">
+                <div
+                    class="relative bg-slate-950 rounded-2xl border border-white/5 flex-grow overflow-hidden shadow-inner flex flex-col min-h-[400px]">
                     <!-- Empty State -->
-                    <div id="preview-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 space-y-4">
-                        <div class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center text-slate-700">
+                    <div id="preview-placeholder"
+                        class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 space-y-4">
+                        <div
+                            class="w-16 h-16 rounded-full bg-slate-900 flex items-center justify-center text-slate-700">
                             <i data-lucide="file-text" class="w-8 h-8"></i>
                         </div>
-                        <p class="text-slate-500 text-sm max-w-[220px]">Input text and click generate to see your PDF preview here.</p>
+                        <p class="text-slate-500 text-sm max-w-[220px]">Input text and click generate to see your PDF
+                            preview here.</p>
                     </div>
 
                     <!-- Loader Overlay -->
-                    <div id="preview-loader" class="hidden absolute inset-0 bg-slate-950/80 backdrop-blur-sm flex flex-col items-center justify-center z-10">
+                    <div id="preview-loader"
+                        class="hidden absolute inset-0 bg-slate-950/80 backdrop-blur-sm flex flex-col items-center justify-center z-10">
                         <i data-lucide="loader-2" class="w-10 h-10 text-brand-cyan animate-spin"></i>
                         <p class="text-xs text-brand-cyan font-bold uppercase tracking-widest mt-4">Rendering PDF...</p>
                     </div>
 
                     <!-- PDF Display -->
-                    <iframe id="pdf-preview" class="hidden w-full h-full border-none opacity-0 transition-opacity duration-700" title="PDF Preview"></iframe>
+                    <iframe id="pdf-preview"
+                        class="hidden w-full h-full border-none opacity-0 transition-opacity duration-700"
+                        title="PDF Preview"></iframe>
                 </div>
 
                 <div class="mt-8 flex gap-4">
-                    <button id="downloadBtn" disabled class="flex-grow h-14 bg-white/5 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed text-white font-bold rounded-xl flex items-center justify-center gap-3 border border-white/10 transition-all">
+                    <button id="downloadBtn" disabled
+                        class="flex-grow h-14 bg-white/5 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed text-white font-bold rounded-xl flex items-center justify-center gap-3 border border-white/10 transition-all">
                         <span>Download PDF</span>
                         <i data-lucide="download" class="w-4 h-4"></i>
                     </button>
@@ -224,10 +236,12 @@
     </div>
 
     <!-- Error Toast -->
-    <div id="client-error" class="hidden fixed bottom-10 left-1/2 -translate-x-1/2 glass-panel px-6 py-4 rounded-2xl border-red-500/20 text-red-400 text-sm font-semibold shadow-2xl z-50 flex items-center gap-4 animate-bounce-in">
+    <div id="client-error"
+        class="hidden fixed bottom-10 left-1/2 -translate-x-1/2 glass-panel px-6 py-4 rounded-2xl border-red-500/20 text-red-400 text-sm font-semibold shadow-2xl z-50 flex items-center gap-4 animate-bounce-in">
         <i data-lucide="alert-triangle" class="w-5 h-5"></i>
         <span id="client-error-text">Please enter some text</span>
-        <button onclick="document.getElementById('client-error').classList.add('hidden')" class="p-1 hover:bg-white/5 rounded-md">
+        <button onclick="document.getElementById('client-error').classList.add('hidden')"
+            class="p-1 hover:bg-white/5 rounded-md">
             <i data-lucide="x" class="w-4 h-4"></i>
         </button>
     </div>
@@ -284,11 +298,11 @@
                 currentPdfUrl = URL.createObjectURL(blob);
 
                 pdfPreview.src = currentPdfUrl + '#toolbar=0&navpanes=0&scrollbar=0';
-                
+
                 previewPlaceholder.classList.add('hidden');
                 pdfPreview.classList.remove('hidden');
                 setTimeout(() => pdfPreview.style.opacity = '1', 50);
-                
+
                 downloadBtn.disabled = false;
                 btnText.textContent = 'Refresh Preview';
                 lucide.createIcons();
@@ -338,4 +352,5 @@
         }
     </script>
 </body>
+
 </html>
