@@ -14,7 +14,15 @@ def generate_pdf():
     if not data or 'text_input' not in data:
         return jsonify({'error': 'No text provided'}), 400
         
-    text = data.get('text_input', '').strip()
+    text = data.get('text_input', '')
+    
+    # SAFE: ensure string only to prevent 'bytearray' has no attribute 'encode' error
+    if isinstance(text, (bytes, bytearray)):
+        text = text.decode('utf-8', errors='replace')
+    else:
+        text = str(text)
+        
+    text = text.strip()
     
     if not text:
         return jsonify({'error': 'Please enter some text to generate a PDF.'}), 400
